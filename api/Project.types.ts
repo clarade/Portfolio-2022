@@ -88,7 +88,6 @@ export interface ProjectDetail {
 	img_square: any[];
 	video_main?: any;
 	img_main: any[];
-	img_rectangle: any[];
 	img_gif: any[];
 }
 

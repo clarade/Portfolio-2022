@@ -30,15 +30,15 @@ function Bio(props: BlockBio) {
 			<div className="card lg:card-side bg-base-100 shadow-xl m-4">
 				<div className="card-body">
 					<h2 className="card-title">{props.tools}</h2>
-					<div className="grid sm:grid-cols-3 lg:grid-cols-5 my-6 justify-center">
+					<div className="grid grid-cols-3 lg:grid-cols-5 my-6 place-items-center gap-4">
 						{props.tools_img.map((img) => {
-							return <img src={fullUrl(img.url)} width={40} height={40} />;
+							return <img src={fullUrl(img.url)} key={img.hash} width={40} height={40} />;
 						})}
 					</div>
 					<h2 className="card-title">{props.interests}</h2>
-					<div className="grid sm:grid-cols-3 lg:grid-cols-5 my-6 justify-center">
+					<div className="grid grid-cols-3 lg:grid-cols-5 my-6 place-items-center gap-4">
 						{props.interests_img.map((img) => {
-							return <img src={fullUrl(img.url)} width={40} height={40} />;
+							return <img src={fullUrl(img.url)} width={40} height={40} key={img.hash} />;
 						})}
 					</div>
 				</div>

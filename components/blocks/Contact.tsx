@@ -32,36 +32,38 @@ function Contact(props: BlockContact) {
 
 	return (
 		<>
-			<h2 className="font-argesta_regular flex justify-center m-8 text-primary">{props.title}</h2>
-			<form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl flex flex-col justify-center m-4">
-				<div className="m-4">
-					<div className="grid grid-rows-1 justify-center">
-						<span className="label-text-alt">Votre e-mail</span>
+			<h2 className="font-argesta_regular flex justify-center mt-6 text-primary">{props.title}</h2>
+			<div className="px-4">
+				<form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl grid place-items-center gap-5 p-5">
+					<div className="form-control w-full max-w-lg">
+						<label className="label">
+							<span className="label-text">What is your name?</span>
+						</label>
 						<input
 							type="text"
-							placeholder="Votre email..."
+							placeholder="Type here"
 							onChange={(e) => setEmail(e.target.value)}
-							name="email"
-							className="input input-bordered input-primary w-full max-w-xs"
+							className="input input-bordered w-full max-w-lg"
 						/>
 					</div>
-					<div className="flex justify-center">
-						<label>
-							<span className="label-text-alt">Votre message</span>
+					<div className="form-control w-full max-w-lg">
+						<label className="label">
+							<span className="label-text">Your bio</span>
 						</label>
 						<textarea
-							className="textarea textarea-primary w-4/6"
+							className="textarea textarea-bordered w-full h-24 max-w-lg"
 							onChange={(e) => setMessage(e.target.value)}
-							placeholder="Votre message..."
+							placeholder="Bio"
 						></textarea>
 					</div>
-				</div>
-				<div className="flex justify-center">
-					<button type="submit" className="btn btn-primary btn-sm m-4">
-						Envoyer
-					</button>
-				</div>
-			</form>
+
+					<div className="flex justify-center">
+						<button type="submit" className="btn btn-primary btn-sm m-4">
+							Envoyer
+						</button>
+					</div>
+				</form>
+			</div>
 		</>
 	);
 }

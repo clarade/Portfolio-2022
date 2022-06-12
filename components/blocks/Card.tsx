@@ -8,7 +8,7 @@ function Card(props: Item) {
 	const img = `${API_URL}${props.thumbnail.url}`;
 	return (
 		<Link href={`/projects/${props.id}`}>
-			<div className="card card-compact w-96 bg-base-100 shadow-xl m-4 h-full">
+			<div className="card card-compact w-full lg:w-96 bg-base-100 shadow-xl h-full">
 				<figure>
 					<img className="h-96 w-full object-cover" src={img} alt={props.title} />
 				</figure>

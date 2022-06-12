@@ -1,9 +1,9 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { useEffect } from 'react';
 import apiFetcher, { API_URL } from '../../api/fetcher';
+import { ProjectDetail } from '../../api/Project.types';
 import { useConfig } from '../../components/ConfigContext';
 import { ProjectDetails } from '../../types/projectDetails';
-import { Item } from '../../components/Project.types';
 
 function Project(props: InferGetServerSidePropsType<typeof getServerSideProps>) {
 	const { setHeader, setLinks } = useConfig();
@@ -17,36 +17,43 @@ function Project(props: InferGetServerSidePropsType<typeof getServerSideProps>) 
 
 		setLinks(props.config.pages || []);
 	}, []);
+
 	return (
 		<div>
 			<div className="font-font_Argesta">{props.project.title}</div>
 			<div>{props.project.description}</div>
+
+			<Infos {...props.project.project_detail} />
 		</div>
 	);
 }
 
-export function Infos(props: ProjectDetails) {
+export function Infos(props: ProjectDetail) {
 	return (
 		<>
 			<div className="badge badge-primary badge-outline font-font_Argesta">{props.tag}</div>
-			<div>{props.date}</div>
-			<div>{props.img_square}</div>
 			<div>
 				{props.isMainImage ? (
-					<div>
+					<div className="flex justify-center rounded">
 						<figure>
 							<img />
 						</figure>
 					</div>
 				) : <></> || props.isMainVideo ? (
-					<div>
+					<div className="flex justify-center rounded">
 						<img />
 					</div>
 				) : (
 					<></>
 				)}
 			</div>
-			<div>{props.isGrid ? <div></div> : <div></div>}</div>
+			<div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+				{props.images.map((image) => {
+					return <img src={`${API_URL}${image.url}`} alt="" />;
+				})}
+			</div>
+
+			<div>{props.date}</div>
 		</>
 	);
 }

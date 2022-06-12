@@ -157,6 +157,26 @@ export interface ImgGif {
 	updated_at: Date;
 }
 
+export interface Images {
+	id: number;
+	name: string;
+	alternativeText: string;
+	caption: string;
+	width: number;
+	height: number;
+	formats?: any;
+	hash: string;
+	ext: string;
+	mime: string;
+	size: number;
+	url: string;
+	previewUrl?: any;
+	provider: string;
+	provider_metadata?: any;
+	created_at: Date;
+	updated_at: Date;
+}
+
 export interface ProjectDetails {
 	id: number;
 	date: string;
@@ -168,10 +188,8 @@ export interface ProjectDetails {
 	tag?: any;
 	isMainVideo?: Boolean;
 	isGrid?: boolean;
-	images: any[];
-	img_square: ImgSquare[];
+	images: Images[];
 	video_main: VideoMain;
 	img_main: ImgMain[];
-	img_rectangle: ImgRectangle[];
 	img_gif: ImgGif[];
 }

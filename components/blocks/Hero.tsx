@@ -14,7 +14,7 @@ function Hero({ full_name, job, logo }: HeroProps) {
 				<h1 className="font-parking">{full_name}</h1>
 			</div>
 			<div className="flex justify-center">
-				<h2 className="font-argesta_courant">{job}</h2>
+				<h2 className="font-argesta_courant text-center">{job}</h2>
 			</div>
 		</>
 	);
