@@ -1,23 +1,32 @@
 {
-  "name": "portfolio-2022",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2"
-  },
-  "devDependencies": {
-    "@types/node": "17.0.21",
-    "@types/react": "17.0.39",
-    "eslint": "8.10.0",
-    "eslint-config-next": "12.1.0",
-    "typescript": "4.6.2"
-  }
+	"name": "portfolio-2022",
+	"version": "0.1.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint"
+	},
+	"dependencies": {
+		"@types/nodemailer": "^6.4.4",
+		"axios": "^0.26.1",
+		"daisyui": "^2.11.0",
+		"next": "^12.1.0",
+		"nodemailer": "^6.7.5",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"react-markdown": "^8.0.3",
+		"strapi-sdk-js": "^2.2.0"
+	},
+	"devDependencies": {
+		"@types/node": "17.0.21",
+		"@types/react": "17.0.39",
+		"autoprefixer": "^10.4.4",
+		"eslint": "8.10.0",
+		"eslint-config-next": "12.1.0",
+		"postcss": "^8.4.12",
+		"tailwindcss": "^3.0.23",
+		"typescript": "4.6.2"
+	}
 }

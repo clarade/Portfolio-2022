@@ -1,16 +1,58 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+/* used for hero title */
+@font-face {
+	font-family: 'Salome';
+	src: url('../public/fonts/Salome_Stencil_Italic.otf');
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+/* for projects details title and pages titles */
+@font-face {
+	font-family: 'Parking';
+	src: url('../public/fonts/parking-regular-webfont.ttf');
 }
 
-* {
-  box-sizing: border-box;
+/* text with 'priorities' */
+@font-face {
+	font-family: 'Argesta Courant';
+	src: url('../public/fonts/argesta-display-regular-webfont.ttf');
+}
+
+/* basic text */
+@font-face {
+	font-family: 'Argesta';
+	src: url('../public/fonts/argesta-headline-regular-webfont.ttf');
+}
+@font-face {
+	font-family: 'Argesta Regular';
+	src: url('../public/fonts/argesta-regular.otf');
+}
+
+p {
+	font-family: 'Argesta', sans-serif;
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	font-family: 'Argesta Regular', sans-serif;
+}
+
+button {
+	font-family: 'Argesta';
+}
+
+label {
+	font-family: 'Argesta Regular', sans-serif;
+}
+
+main-tabs {
+	font-size: 1.25rem;
 }

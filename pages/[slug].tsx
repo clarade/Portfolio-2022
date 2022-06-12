@@ -1,27 +1,29 @@
-import type { GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import Head from 'next/head';
-import Image from 'next/image';
-import styles from '../styles/Home.module.css';
-import axios, { AxiosError } from 'axios';
+import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType, NextPage } from 'next';
 import BlockRenderer from '../components/BlockRenderer';
 import apiFetcher, { API_URL } from '../api/fetcher';
 import { useConfig } from '../components/ConfigContext';
 import { useEffect } from 'react';
+import { BlockRendererProps } from '../components/BlockRenderer.types';
+import { useRouter } from 'next/router';
 
-function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
+function SlugPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
+	const router = useRouter();
 	const { setHeader, setLinks } = useConfig();
 
 	useEffect(() => {
-		setHeader({
-			fullName: props.config.full_name,
-			job: props.config.job,
-			logo: `${API_URL}${props.config.logo.url}`,
-		});
+		if (!router.isFallback) {
+			setHeader({
+				fullName: props.config.full_name,
+				job: props.config.job,
+				logo: `${API_URL}${props.config.logo.url}`,
+			});
+			setLinks(props.config.pages);
+		}
+	}, [router.isFallback]);
 
-		setLinks(props.config.pages);
-	}, []);
+	if (router.isFallback) {
+		return <div>loading...</div>;
+	}
 
 	return (
 		<div className="flex flex-col gap-5">
@@ -31,10 +33,7 @@ function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
 						<div className="card card-compact w-96 bg-base-100 shadow-xl">
 							<figure>
 								<img
-									src={
-										'http://localhost:1337' +
-										p.attributes.Thumbnail.data.attributes.url
-									}
+									src={'http://localhost:1337' + p.attributes.Thumbnail.data.attributes.url}
 									alt={p.attributes.Title}
 								/>
 							</figure>
@@ -48,21 +47,20 @@ function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
 				);
 			})} */}
 
-			{props.page.blocks.map((block: any) => (
+			{/* {props.page?.blocks.map((block: BlockRendererProps) => (
 				<BlockRenderer {...block} key={block.__component + block.id} />
-			))}
+			))} */}
 		</div>
 	);
 }
 
 export const getStaticProps: GetStaticProps = async (ctx) => {
 	try {
-		const config = await apiFetcher.getConfig();
-		const homepage = await apiFetcher.getHomepage();
+		const [config, page] = await Promise.all([apiFetcher.getConfig(), apiFetcher.getPage(ctx.params!.slug as string)]);
 
 		return {
 			props: {
-				page: homepage,
+				page,
 				config,
 			},
 		};
@@ -70,17 +68,19 @@ export const getStaticProps: GetStaticProps = async (ctx) => {
 		console.log(error);
 
 		return {
+			notFound: true,
 			props: {
-				error: (error as AxiosError).message,
-				page: {
-					blocks: [],
-				},
-				config: {
-					logo: {},
-				},
+				error,
 			},
 		};
 	}
 };
 
-export default Home;
+export const getStaticPaths: GetStaticPaths = () => {
+	return {
+		paths: [],
+		fallback: true,
+	};
+};
+
+export default SlugPage;
