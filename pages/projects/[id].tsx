@@ -49,7 +49,7 @@ export function Infos(props: ProjectDetail) {
 			</div>
 			<div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
 				{props.images.map((image) => {
-					return <img src={`${API_URL}${image.url}`} alt="" />;
+					return <img src={`${API_URL}${image.url}`} alt="" key={image.hash} />;
 				})}
 			</div>
 
