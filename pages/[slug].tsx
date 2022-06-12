@@ -47,9 +47,9 @@ function SlugPage(props: InferGetStaticPropsType<typeof getStaticProps>) {
 				);
 			})} */}
 
-			{/* {props.page?.blocks.map((block: BlockRendererProps) => (
+			{props.page?.blocks.map((block: BlockRendererProps) => (
 				<BlockRenderer {...block} key={block.__component + block.id} />
-			))} */}
+			))}
 		</div>
 	);
 }

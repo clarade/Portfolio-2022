@@ -17,14 +17,36 @@ function Project(props: InferGetServerSidePropsType<typeof getServerSideProps>) 
 
 		setLinks(props.config.pages || []);
 	}, []);
-	return <div>{props.project.Title}</div>;
+	return (
+		<div>
+			<div className="font-font_Argesta">{props.project.title}</div>
+			<div>{props.project.description}</div>
+		</div>
+	);
 }
 
-function Infos(props: ProjectDetails) {
+export function Infos(props: ProjectDetails) {
 	return (
 		<>
+			<div className="badge badge-primary badge-outline font-font_Argesta">{props.tag}</div>
 			<div>{props.date}</div>
-			<div>{props.created_at}</div>
+			<div>{props.img_square}</div>
+			<div>
+				{props.isMainImage ? (
+					<div>
+						<figure>
+							<img />
+						</figure>
+					</div>
+				) : <></> || props.isMainVideo ? (
+					<div>
+						<img />
+					</div>
+				) : (
+					<></>
+				)}
+			</div>
+			<div>{props.isGrid ? <div></div> : <div></div>}</div>
 		</>
 	);
 }

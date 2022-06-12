@@ -7,6 +7,7 @@ function Bio(props: BlockBio) {
 	const fullUrl = (url: string) => `${API_URL}${url}`;
 
 	const thumbnail = fullUrl(props.thumbnail.url);
+	const cvPicture = fullUrl(props.cv_picture.url);
 
 	return (
 		<>
@@ -20,21 +21,22 @@ function Bio(props: BlockBio) {
 					<h2 className="card-title">{props.title}</h2>
 					<ReactMarkdown>{props.description}</ReactMarkdown>
 					<div className="card-actions justify-end mt-8">
-						<button className="btn btn-primary btn-sm">Télécharger le CV</button>
+						<a target="_blank" href={cvPicture} rel="noopener noreferrer" className="btn btn-primary btn-sm">
+							Consulter le CV
+						</a>
 					</div>
 				</div>
 			</div>
 			<div className="card lg:card-side bg-base-100 shadow-xl m-4">
-				<div className="grid grid-cols-5"></div>
 				<div className="card-body">
 					<h2 className="card-title">{props.tools}</h2>
-					<div className="">
+					<div className="grid sm:grid-cols-3 lg:grid-cols-5 my-6 justify-center">
 						{props.tools_img.map((img) => {
 							return <img src={fullUrl(img.url)} width={40} height={40} />;
 						})}
 					</div>
 					<h2 className="card-title">{props.interests}</h2>
-					<div className="">
+					<div className="grid sm:grid-cols-3 lg:grid-cols-5 my-6 justify-center">
 						{props.interests_img.map((img) => {
 							return <img src={fullUrl(img.url)} width={40} height={40} />;
 						})}

@@ -5,4 +5,5 @@ export interface BlockContact {
 	first_name: string;
 	last_name: string;
 	textarea: string;
+	title: string;
 }
