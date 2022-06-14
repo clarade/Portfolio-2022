@@ -20,10 +20,9 @@ function Project(props: InferGetServerSidePropsType<typeof getServerSideProps>) 
 
 	return (
 		<div>
+			<Infos {...props.project.project_detail} />
 			<div className="font-font_Argesta">{props.project.title}</div>
 			<div>{props.project.description}</div>
-
-			<Infos {...props.project.project_detail} />
 		</div>
 	);
 }
@@ -47,7 +46,7 @@ export function Infos(props: ProjectDetail) {
 					<></>
 				)}
 			</div>
-			<div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2">
+			<div className="grid lg:grid-cols-4 md:grid-cols-3 gap-5 p-4 sm:grid-cols-2">
 				{props.images.map((image) => {
 					return <img src={`${API_URL}${image.url}`} alt="" key={image.hash} />;
 				})}
