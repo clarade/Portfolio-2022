@@ -83,7 +83,7 @@ export interface ProjectDetail {
 	isMainImage?: any;
 	tag: string;
 	isMainVideo?: any;
-	isGrid?: any;
+	isGridPhoto?: any;
 	images: Image[];
 	img_square: any[];
 	video_main?: any;

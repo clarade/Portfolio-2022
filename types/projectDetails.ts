@@ -187,7 +187,7 @@ export interface ProjectDetails {
 	isMainImage?: Boolean;
 	tag?: any;
 	isMainVideo?: Boolean;
-	isGrid?: boolean;
+	isGridPhoto?: boolean;
 	images: Images[];
 	video_main: VideoMain;
 	img_main: ImgMain[];
