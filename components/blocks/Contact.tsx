@@ -37,23 +37,23 @@ function Contact(props: BlockContact) {
 				<form onSubmit={handleSubmit} className="card bg-base-100 shadow-xl grid place-items-center gap-5 p-5">
 					<div className="form-control w-full max-w-lg">
 						<label className="label">
-							<span className="label-text">What is your name?</span>
+							<span className="label-text">e-mail</span>
 						</label>
 						<input
 							type="text"
-							placeholder="Type here"
+							placeholder="Votre email..."
 							onChange={(e) => setEmail(e.target.value)}
 							className="input input-bordered w-full max-w-lg"
 						/>
 					</div>
 					<div className="form-control w-full max-w-lg">
 						<label className="label">
-							<span className="label-text">Your bio</span>
+							<span className="label-text">message</span>
 						</label>
 						<textarea
 							className="textarea textarea-bordered w-full h-24 max-w-lg"
 							onChange={(e) => setMessage(e.target.value)}
-							placeholder="Bio"
+							placeholder="Votre message..."
 						></textarea>
 					</div>
 

@@ -45,7 +45,13 @@ h2 {
 	font-family: 'Argesta Regular', sans-serif;
 }
 
-button {
+.project-title {
+	font-family: 'Parking', sans-serif;
+	font-size: 2.25rem;
+}
+
+button,
+ul {
 	font-family: 'Argesta';
 }
 
@@ -55,4 +61,7 @@ label {
 
 main-tabs {
 	font-size: 1.25rem;
+}
+.thin {
+	padding: 0.08rem;
 }
