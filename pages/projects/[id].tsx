@@ -75,7 +75,7 @@ export function Infos(props: ProjectDetail) {
 				<div className="my-4">
 					<i>{props.date}</i>
 				</div>
-				<div className="mt-4 mb-6">
+				<div className="mt-4 mb-24">
 					<ReactMarkdown>{props.text}</ReactMarkdown>
 				</div>
 			</div>
