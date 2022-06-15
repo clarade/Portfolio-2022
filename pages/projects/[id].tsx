@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next';
 import { useEffect } from 'react';
+import { ReactMarkdown } from 'react-markdown/lib/react-markdown';
 import apiFetcher, { API_URL } from '../../api/fetcher';
 import { ProjectDetail } from '../../api/Project.types';
 import { useConfig } from '../../components/ConfigContext';
@@ -74,7 +75,9 @@ export function Infos(props: ProjectDetail) {
 				<div className="my-4">
 					<i>{props.date}</i>
 				</div>
-				<div className="my-4">{props.text}</div>
+				<div className="mt-4 mb-6">
+					<ReactMarkdown>{props.text}</ReactMarkdown>
+				</div>
 			</div>
 		</>
 	);

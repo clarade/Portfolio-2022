@@ -11,10 +11,10 @@ function Bio(props: BlockBio) {
 
 	return (
 		<>
-			<div className="card bg-base-100 shadow-xl m-4">
+			<div className="card bg-base-100 shadow-xl mt-10 mb-4 mx-4">
 				<div className="figure">
 					<figure>
-						<img src={thumbnail} alt={props.title} className="rounded" height={60} />
+						<img src={thumbnail} alt={props.title} className="rounded-full h-48 w-auto mt-8 mb-4" />
 					</figure>
 				</div>
 				<div className="card-body">
