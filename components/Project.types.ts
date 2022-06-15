@@ -66,4 +66,5 @@ export interface BlockProjects {
 	id: number;
 	items: Item[];
 	withPagination: boolean;
+	title: string;
 }
