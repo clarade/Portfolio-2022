@@ -69,13 +69,13 @@ export function Infos(props: ProjectDetail) {
 					</div>
 				)}
 			</div>
-			<div className="grid grid-cols-1">
+			<div className="grid grid-cols-1 m-4">
 				<span className="w-full thin my-4 bg-primary"></span>
 				<div className="badge badge-primary badge-outline font-font_Argesta py-4">{props.tag}</div>
 				<div className="my-4">
 					<i>{props.date}</i>
 				</div>
-				<div className="mt-4 mb-24">
+				<div className="mb-24">
 					<ReactMarkdown>{props.text}</ReactMarkdown>
 				</div>
 			</div>

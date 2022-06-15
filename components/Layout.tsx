@@ -12,7 +12,7 @@ function Layout({ children }: PropsWithChildren<{}>) {
 			<main className="mx-auto container">{children}</main>
 			<footer className="footer footer-center p-6 text-primary">
 				<div>
-					<p>Copyright © 2022 - Tous droits réservés, fait avec des larmes de sel</p>
+					<p>Copyright © 2022 - Clara Desperben — Tous droits réservés</p>
 				</div>
 			</footer>
 		</>

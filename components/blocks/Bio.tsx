@@ -18,7 +18,7 @@ function Bio(props: BlockBio) {
 					</figure>
 				</div>
 				<div className="card-body">
-					<h2 className="card-title">{props.title}</h2>
+					<h2 className="card-title my-4">{props.title}</h2>
 					<ReactMarkdown>{props.description}</ReactMarkdown>
 					<div className="card-actions justify-end mt-8">
 						<a target="_blank" href={cvPicture} rel="noopener noreferrer" className="btn btn-primary btn-sm">
@@ -35,7 +35,7 @@ function Bio(props: BlockBio) {
 							return <img src={fullUrl(img.url)} key={img.hash} width={40} height={40} />;
 						})}
 					</div>
-					<h2 className="card-title">{props.interests}</h2>
+					<h2 className="card-title my-4">{props.interests}</h2>
 					<div className="grid grid-cols-3 lg:grid-cols-5 my-6 place-items-center gap-4">
 						{props.interests_img.map((img) => {
 							return <img src={fullUrl(img.url)} width={40} height={40} key={img.hash} />;
