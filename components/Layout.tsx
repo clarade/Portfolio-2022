@@ -10,7 +10,7 @@ function Layout({ children }: PropsWithChildren<{}>) {
 			<Hero full_name={header.fullName} job={header.job} logo={header.logo} />
 			<Navbar />
 			<main className="mx-auto container">{children}</main>
-			<footer className="footer footer-center p-6 mt-4 text-primary">
+			<footer className="footer footer-center p-8 mt-4 mb-4 text-primary">
 				<div>
 					<p>Copyright © 2022 - Clara Desperben — Tous droits réservés</p>
 				</div>
