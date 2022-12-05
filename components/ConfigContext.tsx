@@ -17,7 +17,6 @@ export const configContext = createContext({} as ConfigContext);
 
 export const useConfig = () => {
 	const config = useContext(configContext);
-
 	return config;
 };
 
