@@ -48,9 +48,9 @@ function Home(props: InferGetStaticPropsType<typeof getStaticProps>) {
 				);
 			})} */}
 
-			{props.page.blocks.map((block: any) => (
+			{/* {props.page.blocks.map((block: any) => (
 				<BlockRenderer {...block} key={block.__component + block.id} />
-			))}
+			))} */}
 		</div>
 	);
 }
